@@ -35,3 +35,14 @@ build/
 ### txt草稿 ###
 *.txt
 
+### mvnw ###
+**/mvnw.cmd
+**/mvnw
+
+.mvn
+**/target/
+
+**/.gitignore
+
+
+
