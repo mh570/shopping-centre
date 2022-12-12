@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fengling.shopping.ware.dao.OnlCgformHeadDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.fengling.shopping.ware.entity.OnlCgformHeadEntity" id="onlCgformHeadMap">
+        <result property="id" column="id"/>
+        <result property="tableName" column="table_name"/>
+        <result property="tableType" column="table_type"/>
+        <result property="tableVersion" column="table_version"/>
+        <result property="tableTxt" column="table_txt"/>
+        <result property="isCheckbox" column="is_checkbox"/>
+        <result property="isDbSynch" column="is_db_synch"/>
+        <result property="isPage" column="is_page"/>
+        <result property="isTree" column="is_tree"/>
+        <result property="idSequence" column="id_sequence"/>
+        <result property="idType" column="id_type"/>
+        <result property="queryMode" column="query_mode"/>
+        <result property="relationType" column="relation_type"/>
+        <result property="subTableStr" column="sub_table_str"/>
+        <result property="tabOrderNum" column="tab_order_num"/>
+        <result property="treeParentIdField" column="tree_parent_id_field"/>
+        <result property="treeIdField" column="tree_id_field"/>
+        <result property="treeFieldname" column="tree_fieldname"/>
+        <result property="formCategory" column="form_category"/>
+        <result property="formTemplate" column="form_template"/>
+        <result property="formTemplateMobile" column="form_template_mobile"/>
+        <result property="scroll" column="scroll"/>
+        <result property="copyVersion" column="copy_version"/>
+        <result property="copyType" column="copy_type"/>
+        <result property="physicId" column="physic_id"/>
+        <result property="extConfigJson" column="ext_config_json"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="themeTemplate" column="theme_template"/>
+        <result property="isDesForm" column="is_des_form"/>
+        <result property="desFormCode" column="des_form_code"/>
+        <result property="lowAppId" column="low_app_id"/>
+    </resultMap>
+
+
+</mapper>

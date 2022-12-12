@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fengling.shopping.ware.dao.SysDepartDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.fengling.shopping.ware.entity.SysDepartEntity" id="sysDepartMap">
+        <result property="id" column="id"/>
+        <result property="parentId" column="parent_id"/>
+        <result property="departName" column="depart_name"/>
+        <result property="departNameEn" column="depart_name_en"/>
+        <result property="departNameAbbr" column="depart_name_abbr"/>
+        <result property="departOrder" column="depart_order"/>
+        <result property="description" column="description"/>
+        <result property="orgCategory" column="org_category"/>
+        <result property="orgType" column="org_type"/>
+        <result property="orgCode" column="org_code"/>
+        <result property="mobile" column="mobile"/>
+        <result property="fax" column="fax"/>
+        <result property="address" column="address"/>
+        <result property="memo" column="memo"/>
+        <result property="status" column="status"/>
+        <result property="delFlag" column="del_flag"/>
+        <result property="qywxIdentifier" column="qywx_identifier"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+
+</mapper>

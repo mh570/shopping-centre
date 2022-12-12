@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fengling.shopping.ware.dao.TmpReportData1Dao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.fengling.shopping.ware.entity.TmpReportData1Entity" id="tmpReportData1Map">
+        <result property="monty" column="monty"/>
+        <result property="mainIncome" column="main_income"/>
+        <result property="total" column="total"/>
+        <result property="hisLowest" column="his_lowest"/>
+        <result property="hisAverage" column="his_average"/>
+        <result property="hisHighest" column="his_highest"/>
+    </resultMap>
+
+
+</mapper>

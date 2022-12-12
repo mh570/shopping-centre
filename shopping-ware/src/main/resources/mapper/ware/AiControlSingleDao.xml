@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fengling.shopping.ware.dao.AiControlSingleDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.fengling.shopping.ware.entity.AiControlSingleEntity" id="aiControlSingleMap">
+        <result property="id" column="id"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="sysOrgCode" column="sys_org_code"/>
+        <result property="price" column="price"/>
+        <result property="name" column="name"/>
+        <result property="miMa" column="mi_ma"/>
+        <result property="xiala" column="xiala"/>
+        <result property="danxuan" column="danxuan"/>
+        <result property="duoxuan" column="duoxuan"/>
+        <result property="kaiguan" column="kaiguan"/>
+        <result property="riqi" column="riqi"/>
+        <result property="nyrsfm" column="nyrsfm"/>
+        <result property="shijian" column="shijian"/>
+        <result property="wenjian" column="wenjian"/>
+        <result property="tupian" column="tupian"/>
+        <result property="dhwb" column="dhwb"/>
+        <result property="xldx" column="xldx"/>
+        <result property="xlss" column="xlss"/>
+        <result property="popup" column="popup"/>
+        <result property="popback" column="popback"/>
+        <result property="flzds" column="flzds"/>
+        <result property="bmxz" column="bmxz"/>
+        <result property="yhxz" column="yhxz"/>
+        <result property="fwb" column="fwb"/>
+        <result property="markdown" column="markdown"/>
+        <result property="shq" column="shq"/>
+        <result property="ldzuy" column="ldzuy"/>
+        <result property="ldzje" column="ldzje"/>
+        <result property="ldzjs" column="ldzjs"/>
+        <result property="zdys" column="zdys"/>
+        <result property="yuanjia" column="yuanjia"/>
+        <result property="geshu" column="geshu"/>
+        <result property="jycs" column="jycs"/>
+        <result property="province" column="province"/>
+        <result property="zdmrz" column="zdmrz"/>
+        <result property="zdbxl" column="zdbxl"/>
+        <result property="zdbdx" column="zdbdx"/>
+        <result property="zdbduoxuan" column="zdbduoxuan"/>
+        <result property="zdbxldx" column="zdbxldx"/>
+        <result property="zddtjxl" column="zddtjxl"/>
+        <result property="zddtjdx" column="zddtjdx"/>
+        <result property="zddtjduox" column="zddtjduox"/>
+        <result property="zddtjxldx" column="zddtjxldx"/>
+        <result property="zddtjxlss" column="zddtjxlss"/>
+    </resultMap>
+
+
+</mapper>

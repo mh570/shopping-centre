@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fengling.shopping.ware.dao.RepDemoEmployeeDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.fengling.shopping.ware.entity.RepDemoEmployeeEntity" id="repDemoEmployeeMap">
+        <result property="id" column="id"/>
+        <result property="num" column="num"/>
+        <result property="name" column="name"/>
+        <result property="sex" column="sex"/>
+        <result property="birthday" column="birthday"/>
+        <result property="nation" column="nation"/>
+        <result property="political" column="political"/>
+        <result property="nativePlace" column="native_place"/>
+        <result property="height" column="height"/>
+        <result property="weight" column="weight"/>
+        <result property="health" column="health"/>
+        <result property="idCard" column="id_card"/>
+        <result property="education" column="education"/>
+        <result property="school" column="school"/>
+        <result property="major" column="major"/>
+        <result property="address" column="address"/>
+        <result property="zipCode" column="zip_code"/>
+        <result property="email" column="email"/>
+        <result property="phone" column="phone"/>
+        <result property="foreignLanguage" column="foreign_language"/>
+        <result property="foreignLanguageLevel" column="foreign_language_level"/>
+        <result property="computerLevel" column="computer_level"/>
+        <result property="graduationTime" column="graduation_time"/>
+        <result property="arrivalTime" column="arrival_time"/>
+        <result property="positionalTitles" column="positional_titles"/>
+        <result property="educationExperience" column="education_experience"/>
+        <result property="workExperience" column="work_experience"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="delFlag" column="del_flag"/>
+    </resultMap>
+
+
+</mapper>

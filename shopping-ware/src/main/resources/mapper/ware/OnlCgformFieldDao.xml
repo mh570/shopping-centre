@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fengling.shopping.ware.dao.OnlCgformFieldDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.fengling.shopping.ware.entity.OnlCgformFieldEntity" id="onlCgformFieldMap">
+        <result property="id" column="id"/>
+        <result property="cgformHeadId" column="cgform_head_id"/>
+        <result property="dbFieldName" column="db_field_name"/>
+        <result property="dbFieldTxt" column="db_field_txt"/>
+        <result property="dbFieldNameOld" column="db_field_name_old"/>
+        <result property="dbIsKey" column="db_is_key"/>
+        <result property="dbIsNull" column="db_is_null"/>
+        <result property="dbIsPersist" column="db_is_persist"/>
+        <result property="dbType" column="db_type"/>
+        <result property="dbLength" column="db_length"/>
+        <result property="dbPointLength" column="db_point_length"/>
+        <result property="dbDefaultVal" column="db_default_val"/>
+        <result property="dictField" column="dict_field"/>
+        <result property="dictTable" column="dict_table"/>
+        <result property="dictText" column="dict_text"/>
+        <result property="fieldShowType" column="field_show_type"/>
+        <result property="fieldHref" column="field_href"/>
+        <result property="fieldLength" column="field_length"/>
+        <result property="fieldValidType" column="field_valid_type"/>
+        <result property="fieldMustInput" column="field_must_input"/>
+        <result property="fieldExtendJson" column="field_extend_json"/>
+        <result property="fieldDefaultValue" column="field_default_value"/>
+        <result property="isQuery" column="is_query"/>
+        <result property="isShowForm" column="is_show_form"/>
+        <result property="isShowList" column="is_show_list"/>
+        <result property="isReadOnly" column="is_read_only"/>
+        <result property="queryMode" column="query_mode"/>
+        <result property="mainTable" column="main_table"/>
+        <result property="mainField" column="main_field"/>
+        <result property="orderNum" column="order_num"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="createTime" column="create_time"/>
+        <result property="createBy" column="create_by"/>
+        <result property="converter" column="converter"/>
+        <result property="queryDefVal" column="query_def_val"/>
+        <result property="queryDictText" column="query_dict_text"/>
+        <result property="queryDictField" column="query_dict_field"/>
+        <result property="queryDictTable" column="query_dict_table"/>
+        <result property="queryShowType" column="query_show_type"/>
+        <result property="queryConfigFlag" column="query_config_flag"/>
+        <result property="queryValidType" column="query_valid_type"/>
+        <result property="queryMustInput" column="query_must_input"/>
+        <result property="sortFlag" column="sort_flag"/>
+    </resultMap>
+
+
+</mapper>
