@@ -1,10 +1,14 @@
 package com.fengling.shopping.product.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
+import java.util.Objects;
+
 import lombok.Data;
 
 /**
@@ -57,4 +61,19 @@ public class CategoryEntity implements Serializable {
 	 */
 	private Integer productCount;
 
+	@TableField(exist = false)
+	private List<CategoryEntity> children;
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		CategoryEntity that = (CategoryEntity) o;
+		return Objects.equals(catId, that.catId) && Objects.equals(name, that.name) && Objects.equals(parentCid, that.parentCid) && Objects.equals(catLevel, that.catLevel) && Objects.equals(showStatus, that.showStatus) && Objects.equals(sort, that.sort) && Objects.equals(icon, that.icon) && Objects.equals(productUnit, that.productUnit) && Objects.equals(productCount, that.productCount);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(catId, name, parentCid, catLevel, showStatus, sort, icon, productUnit, productCount);
+	}
 }
