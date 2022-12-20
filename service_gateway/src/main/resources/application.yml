@@ -2,29 +2,37 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: test_route
-          uri: https://www.baidu.com
+        - id: product_route
+          uri: lb://shopping-product
+#          uri: http://localhost:10010
           predicates:
-            - Query=url,baidu
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: service-third-party
+          uri: lb://service-third-party
+          predicates:
+            - Path=/api/thirdparty/**
+          filters:
+            - RewritePath=/api/thirdparty/(?<segment>.*),/$\{segment}
+
+        - id: admin_route
+          uri: lb://renren-fast
+#          uri: http://localhost:8080
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}
 
         - id: qq_route
           uri: https://www.qq.com
           predicates:
             - Query=url,qq
 
-#        - id: product_route
-#          uri: lb://gulimall-product
-#          predicates:
-#            - Path=/api/product/**
-#          filters:
-#            - RewritePath=/api/(?<segment>.*),/$\{segment}
-#
-#        - id: third_party_route
-#          uri: lb://gulimall-third-party
-#          predicates:
-#            - Path=/api/thirdparty/**
-#          filters:
-#            - RewritePath=/api/thirdparty/(?<segment>.*),/$\{segment}
+
+
+
 #
 #        - id: member_route
 #          uri: lb://gulimall-member
@@ -40,12 +48,7 @@ spring:
 #          filters:
 #            - RewritePath=/api/(?<segment>.*),/$\{segment}
 #
-#        - id: admin_route
-#          uri: lb://renren-fast
-#          predicates:
-#            - Path=/api/**
-#          filters:
-#            - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}
+
 
 
 

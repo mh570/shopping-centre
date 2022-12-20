@@ -14,17 +14,16 @@ mybatis-plus:
 
 
 server:
-  port: 10010
+  port: 89
 
 spring:
   application:
-    name: shopping-product
+    name: service-third-party
   datasource:
     url: jdbc:mysql://192.168.56.10:3306/shopping_pms?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
     username: root
     password: password
     driver-class-name: com.mysql.cj.jdbc.Driver
-
   cloud:
     nacos:
       discovery:
@@ -33,5 +32,6 @@ spring:
       access-key: LTAI5tCcdWfP3gckTS4KQNrw
       secret-key: 4vmbXUD0rOYmIuBGg07v48jzyAIXBl
       oss:
-        endpoint: https://oss-cn-beijing.aliyuncs.com
+        endpoint: oss-cn-beijing.aliyuncs.com
+        bucket: fengling-png
 

@@ -2,10 +2,11 @@ package com.fengling.shopping.product.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
+import org.hibernate.validator.constraints.URL;
+
+import javax.validation.constraints.*;
+import java.io.Serializable;
 
 /**
  * Ʒ
@@ -27,10 +28,13 @@ public class BrandEntity implements Serializable {
 	/**
 	 * Ʒ
 	 */
+	@NotBlank
 	private String name;
 	/**
 	 * Ʒ
 	 */
+	@NotEmpty
+	@URL
 	private String logo;
 	/**
 	 * 
@@ -43,10 +47,14 @@ public class BrandEntity implements Serializable {
 	/**
 	 * 
 	 */
+	@NotEmpty
+	@Pattern(regexp = "/^[a-zA-Z]$/")
 	private String firstLetter;
 	/**
 	 * 
 	 */
+	@NotNull
+	@Min(value = 0)
 	private Integer sort;
 
 }
