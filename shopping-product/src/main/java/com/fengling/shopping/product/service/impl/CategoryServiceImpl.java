@@ -1,10 +1,10 @@
 package com.fengling.shopping.product.service.impl;
 
+import com.fengling.shopping.product.service.CategoryBrandRelationService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -16,11 +16,14 @@ import com.fengling.common.utils.Query;
 import com.fengling.shopping.product.dao.CategoryDao;
 import com.fengling.shopping.product.entity.CategoryEntity;
 import com.fengling.shopping.product.service.CategoryService;
+import org.springframework.transaction.annotation.Transactional;
 
 
 @Service("categoryService")
 public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity> implements CategoryService {
 
+    @Autowired
+    private CategoryBrandRelationService categoryBrandRelationService;
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
         IPage<CategoryEntity> page = this.page(
@@ -59,14 +62,40 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
 
     @Override
     public void removeMenuByIds(List<Long> asList) {
-        
+
         baseMapper.deleteBatchIds(asList);
+    }
+
+    @Override
+    public Long[] findCategoryPath(Long catelogId) {
+        List<Long> paths = new ArrayList<>();
+        List<Long> path = findParentPath(catelogId, paths);
+        Collections.reverse(path);
+        return path.toArray(new Long[path.size()]);
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void updateCascade(CategoryEntity category) {
+        this.updateById(category);
+        categoryBrandRelationService.updateCategory(category.getCatId(),category.getName());
+
+    }
+
+    private List<Long> findParentPath(Long catelogId, List<Long> paths) {
+        paths.add(catelogId);
+        CategoryEntity categoryEntity = baseMapper.selectById(catelogId);
+        if (categoryEntity.getParentCid() != 0) {
+            findParentPath(categoryEntity.getParentCid(), paths);
+        }
+        return paths;
     }
 
     /**
      * 回调getChildren
+     *
      * @param root 1级分类
-     * @param all 全部数据
+     * @param all  全部数据
      * @return childrenCollect子类
      */
     private List<CategoryEntity> getChildren(CategoryEntity root, List<CategoryEntity> all) {

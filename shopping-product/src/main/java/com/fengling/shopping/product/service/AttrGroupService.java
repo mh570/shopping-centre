@@ -7,7 +7,7 @@ import com.fengling.shopping.product.entity.AttrGroupEntity;
 import java.util.Map;
 
 /**
- * 
+ *
  *
  * @author mh570
  * @email 2317295126@qq.com
@@ -16,5 +16,7 @@ import java.util.Map;
 public interface AttrGroupService extends IService<AttrGroupEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+
+    PageUtils queryPage(Map<String, Object> params, Long catelogId);
 }
 

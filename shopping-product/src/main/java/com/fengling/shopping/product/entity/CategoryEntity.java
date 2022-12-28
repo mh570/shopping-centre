@@ -10,7 +10,13 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fengling.common.valid.AddGroup;
+import com.fengling.common.valid.UpdateGroup;
 import lombok.Data;
+
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 /**
  * 
@@ -49,6 +55,8 @@ public class CategoryEntity implements Serializable {
 	/**
 	 * 
 	 */
+	@NotNull(groups={AddGroup.class})
+	@Min(value = 0,message = "排序必须大于等于0",groups={AddGroup.class, UpdateGroup.class})
 	private Integer sort;
 	/**
 	 * ͼ
@@ -63,6 +71,7 @@ public class CategoryEntity implements Serializable {
 	 */
 	private Integer productCount;
 
+	@JsonInclude(JsonInclude.Include.NON_EMPTY)
 	@TableField(exist = false)
 	private List<CategoryEntity> children;
 

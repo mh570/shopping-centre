@@ -4,7 +4,7 @@ package com.fengling.test;
 //import com.aliyun.oss.OSSClient;
 //import com.aliyun.oss.OSSException;
 //import com.aliyun.oss.model.PutObjectRequest;
-import com.fengling.shopping.product.ShoppingProductApplication;
+//import com.fengling.shopping.product.ShoppingProductApplication;
 import com.fengling.shopping.product.entity.BrandEntity;
 import com.fengling.shopping.product.service.BrandService;
 import org.assertj.core.util.Lists;
@@ -12,6 +12,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
 import java.io.File;
@@ -20,7 +21,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = ShoppingProductApplication.class)
+//@SpringBootTest(classes = ShoppingProductApplication.class)
 public class TestApplication {
 
     @Resource
@@ -69,6 +70,18 @@ public class TestApplication {
 //        }
 //    }
 
+
+    @Test
+    public void hasText() {
+        String a = "asdasd";
+        String s = "";
+        String s1 = " ";
+
+        System.out.println(StringUtils.hasText(a));
+        System.out.println(StringUtils.hasText(s));
+        System.out.println(StringUtils.hasText(s1));
+
+    }
 
     @Test
     public void contextLoads() {
