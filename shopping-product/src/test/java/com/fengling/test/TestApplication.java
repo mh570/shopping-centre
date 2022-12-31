@@ -93,7 +93,7 @@ public class TestApplication {
 
     @Test
     public void distinct() {
-        List<String> strings = Arrays.asList("1abc", "2bc", "2bc", "9efg", "8abcd", "4", "7jkl", "6ljkl");
+        List<String> strings = Arrays.asList("1abc", "2bc", "2bc", "9efg", "8abcd", "4", "7jkl", "6ljkl","abc");
         List<String> distincted = strings.stream().distinct().collect(Collectors.toList());
         System.out.println(distincted);
         strings.stream().forEach(s -> System.out.println(s));

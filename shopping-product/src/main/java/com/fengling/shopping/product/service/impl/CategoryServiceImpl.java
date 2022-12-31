@@ -99,7 +99,8 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
      * @return childrenCollect子类
      */
     private List<CategoryEntity> getChildren(CategoryEntity root, List<CategoryEntity> all) {
-        List<CategoryEntity> childrenCollect = all.stream().filter(categoryEntity -> categoryEntity.getParentCid() == root.getCatId())
+        List<CategoryEntity> childrenCollect = all.stream()
+                .filter(categoryEntity -> categoryEntity.getParentCid() == root.getCatId())
                 .peek(categoryEntity -> categoryEntity.setChildren(getChildren(categoryEntity, all)))
                 .sorted(Comparator.comparingInt(a -> (a.getSort() == null ? 0 : a.getSort())))
                 .collect(Collectors.toList());
