@@ -2,7 +2,9 @@ package com.fengling.shopping.product.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.fengling.common.utils.PageUtils;
+import com.fengling.shopping.product.entity.SpuInfoDescEntity;
 import com.fengling.shopping.product.entity.SpuInfoEntity;
+import com.fengling.shopping.product.vo.SpuSaveVo;
 
 import java.util.Map;
 
@@ -16,5 +18,11 @@ import java.util.Map;
 public interface SpuInfoService extends IService<SpuInfoEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+
+    void saveSpuInfo(SpuSaveVo saveVo);
+
+    void saveBaseSpuInfo(SpuInfoEntity spuInfoEntity);
+
+
 }
 

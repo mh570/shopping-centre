@@ -8,12 +8,16 @@ import com.fengling.shopping.product.entity.AttrAttrgroupRelationEntity;
 import com.fengling.shopping.product.entity.AttrGroupEntity;
 import com.fengling.shopping.product.entity.CategoryEntity;
 import com.fengling.shopping.product.service.CategoryService;
+import com.fengling.shopping.product.vo.AttrGroupRelationVo;
 import com.fengling.shopping.product.vo.AttrRespVo;
 import com.fengling.shopping.product.vo.AttrVo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -60,7 +64,7 @@ public class AttrServiceImpl extends ServiceImpl<AttrDao, AttrEntity> implements
 
         BeanUtils.copyProperties(attr, attrEntity);
         this.save(attrEntity);
-        if (attr.getAttrType() == ProductConstant.AttrEnum.ATTR_TYPE_BASE.getCode()) {
+        if (attr.getAttrType() == ProductConstant.AttrEnum.ATTR_TYPE_BASE.getCode() && attr.getAttrGroupId() != null) {
             AttrAttrgroupRelationEntity relationEntity = new AttrAttrgroupRelationEntity();
             relationEntity.setAttrGroupId(attr.getAttrGroupId());
             relationEntity.setAttrId(attrEntity.getAttrId());
@@ -171,4 +175,76 @@ public class AttrServiceImpl extends ServiceImpl<AttrDao, AttrEntity> implements
             }
         }
     }
+
+    @Override
+    public List<AttrEntity> attrRelationAttr(Long attrgroupId) {
+
+        List<AttrAttrgroupRelationEntity> relationEntities = attrAttrgroupRelationDao.selectList(new QueryWrapper<AttrAttrgroupRelationEntity>()
+                .eq("attr_group_id", attrgroupId));
+
+        List<Long> collect = relationEntities.stream()
+                .map(relation -> relation.getAttrId())
+                .collect(Collectors.toList());
+//                for (Long attrId:
+//                     collect) {
+//                    List<AttrEntity> attrEntities = baseMapper.selectByAttrId(attrId);
+//                    return  attrEntities;
+//                }
+//                .listByIds内部数据库xml计算疑似有问题，改动成手写xml文件，效率有问题没有直接list给mybatis处理
+
+        if (collect == null || collect.size() == 0) {
+            return null;
+        }
+        Collection<AttrEntity> attrEntities = this.listByIds(collect);
+        return (List<AttrEntity>) attrEntities;
+
+
+    }
+
+    @Override
+    public void deleteRelation(AttrGroupRelationVo[] attrGroupRelationVo) {
+        List<AttrAttrgroupRelationEntity> collect = Arrays.asList(attrGroupRelationVo).stream().map(item -> {
+            AttrAttrgroupRelationEntity attrgroupRelationEntity = new AttrAttrgroupRelationEntity();
+            BeanUtils.copyProperties(item, attrgroupRelationEntity);
+            return attrgroupRelationEntity;
+        }).collect(Collectors.toList());
+
+        attrAttrgroupRelationDao.deleteBatchRelation(collect);
+    }
+
+    @Override
+    public PageUtils getNoRelationAttr(Long attrgroupId, Map<String, Object> params) {
+        AttrGroupEntity attrGroupEntity = attrGroupDao.selectById(attrgroupId);
+        Long catelogId = attrGroupEntity.getCatelogId();
+        List<AttrGroupEntity> group = attrGroupDao.selectList(new QueryWrapper<AttrGroupEntity>()
+                .eq("catelog_id", catelogId));
+
+
+        List<Long> collect = group.stream().map(item -> item.getAttrGroupId()).collect(Collectors.toList());
+
+        List<AttrAttrgroupRelationEntity> relationEntities = attrAttrgroupRelationDao.selectList(new QueryWrapper<AttrAttrgroupRelationEntity>()
+                .in("attr_group_id", collect));
+
+        List<Long> attrId = relationEntities.stream().map(item -> item.getAttrId()).collect(Collectors.toList());
+        QueryWrapper<AttrEntity> queryWrapper = new QueryWrapper<AttrEntity>()
+                .eq("catelog_id", catelogId)
+                .eq("attr_type",ProductConstant.AttrEnum.ATTR_TYPE_BASE.getCode());
+
+        if (attrId != null && attrId.size() > 0) {
+            queryWrapper.notIn("attr_id", attrId);
+        }
+        String key = (String) params.get("key");
+        if (StringUtils.hasText(key)) {
+            queryWrapper.and(item -> item.eq("attr_id", key).or().like("attr_name", key));
+        }
+//        IPage<AttrEntity> page = this.page(new Query<AttrEntity>().getPage(params), queryWrapper);
+
+        IPage<AttrEntity> attrEntityIPage = baseMapper.selectPage(new Query<AttrEntity>().getPage(params), queryWrapper);
+        return new PageUtils(attrEntityIPage);
+
+
+
+    }
+
+
 }

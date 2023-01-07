@@ -1,6 +1,7 @@
 package com.fengling.shopping.product.exception;
 
 import com.fengling.common.exception.BizCodeEnume;
+import com.fengling.common.exception.DaoException;
 import com.fengling.common.utils.R;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.BindingResult;
@@ -31,12 +32,24 @@ public class GulimallExceptionControllerAdvice {
         return R.error(BizCodeEnume.VAILD_EXCEPTION.getCode(),BizCodeEnume.VAILD_EXCEPTION.getMsg()).put("data",errorMap);
     }
 
+//    @ExceptionHandler(value= DaoException.class)
+//    public R daoException(DaoException e){
+//        log.error("数据校验出现问题{}，异常类型：{}",e.getMessage(),e.getClass());
+////        BindingResult bindingResult = e.getBindingResult();
+////        Map<String,String> errorMap = new HashMap<>();
+////        bindingResult.getFieldErrors().forEach((fieldError)->{
+////            errorMap.put(fieldError.getField(),fieldError.getDefaultMessage());
+////        });
+//        return R.error(BizCodeEnume.DAO_EXCEPTION.getCode(),BizCodeEnume.DAO_EXCEPTION.getMsg()).put("data",errorMap);
+//    }
+
     @ExceptionHandler(value = Throwable.class)
     public R handleException(Throwable throwable){
 
         log.error("错误：",throwable);
         return R.error(BizCodeEnume.UNKNOW_EXCEPTION.getCode(),BizCodeEnume.UNKNOW_EXCEPTION.getMsg());
     }
+
 
 
 }

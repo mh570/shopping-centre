@@ -35,7 +35,7 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
-            <scope>provided </scope>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

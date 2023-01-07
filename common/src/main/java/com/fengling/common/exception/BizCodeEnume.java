@@ -17,6 +17,7 @@ package com.fengling.common.exception;
  */
 public enum BizCodeEnume {
     UNKNOW_EXCEPTION(10000,"系统未知异常"),
+    DAO_EXCEPTION(99999,"数据库错误"),
     VAILD_EXCEPTION(10001,"参数格式校验失败");
 
     private int code;

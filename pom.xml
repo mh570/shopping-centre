@@ -13,6 +13,7 @@
         <module>service_client</module>
         <module>service_gateway</module>
         <module>service-third-party</module>
+        <module>text</module>
 
 
     </modules>

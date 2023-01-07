@@ -4,7 +4,7 @@ package com.fengling.test;
 //import com.aliyun.oss.OSSClient;
 //import com.aliyun.oss.OSSException;
 //import com.aliyun.oss.model.PutObjectRequest;
-//import com.fengling.shopping.product.ShoppingProductApplication;
+import com.fengling.shopping.product.ShoppingProductApplication;
 import com.fengling.shopping.product.entity.BrandEntity;
 import com.fengling.shopping.product.service.BrandService;
 import org.assertj.core.util.Lists;
@@ -16,12 +16,13 @@ import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RunWith(SpringRunner.class)
-//@SpringBootTest(classes = ShoppingProductApplication.class)
+@SpringBootTest(classes = ShoppingProductApplication.class)
 public class TestApplication {
 
     @Resource
@@ -72,7 +73,7 @@ public class TestApplication {
 
 
     @Test
-    public void hasText() {
+    public void hasTest() {
         String a = "asdasd";
         String s = "";
         String s1 = " ";
@@ -82,6 +83,20 @@ public class TestApplication {
         System.out.println(StringUtils.hasText(s1));
 
     }
+
+
+    @Test
+    public void stringTest() {
+        List<String> list = new ArrayList<String>();
+        list.add("s1");
+        list.add("s3");
+        list.add("s5");
+        list.add("s7");
+        System.out.println(list);
+        System.out.println(String.join(",", list));
+
+    }
+
 
     @Test
     public void contextLoads() {
@@ -93,11 +108,13 @@ public class TestApplication {
 
     @Test
     public void distinct() {
-        List<String> strings = Arrays.asList("1abc", "2bc", "2bc", "9efg", "8abcd", "4", "7jkl", "6ljkl","abc");
+        List<String> strings = Arrays.asList("1abc", "2bc", "2bc", "9efg", "8abcd", "4", "7jkl", "6ljkl", "abc");
         List<String> distincted = strings.stream().distinct().collect(Collectors.toList());
         System.out.println(distincted);
         strings.stream().forEach(s -> System.out.println(s));
-                //.collect(Collectors.toList());
+//        strings.stream().forEach(s -> s.toUpperCase());
+        System.out.println("#############################################################################");
+        //.collect(Collectors.toList());
 //        List<String> distincted1 = strings.stream().map().collect(Collectors.toList());
         List<String> distincted1 = strings.stream().filter(s -> s.equals("abc")).collect(Collectors.toList());
         System.out.println(distincted1);
@@ -105,6 +122,12 @@ public class TestApplication {
 //使用map，可以从一种流转化为另外一种流
         List<String> distincted2 = strings.stream().map(s -> s.toUpperCase()).collect(Collectors.toList());
         System.out.println(distincted2);
+//        for (String s :
+//                strings) {
+//            System.out.print(s.toUpperCase());
+//        }
+
+
         System.out.println("#############################################################################");
         List<String> distincted3 = strings.stream().peek(s -> s.toUpperCase()).collect(Collectors.toList());
         System.out.println(distincted3);

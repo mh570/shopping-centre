@@ -3,6 +3,7 @@ package com.fengling.shopping.product.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import com.fengling.shopping.product.vo.AttrGroupRelationVo;
 import com.fengling.shopping.product.vo.AttrRespVo;
 import com.fengling.shopping.product.vo.AttrVo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,8 @@ import com.fengling.common.utils.R;
 public class AttrController {
     @Autowired
     private AttrService attrService;
+
+
 
     //    http://localhost:8818/api/product/attr/base/list/0    ?t=1672224381161&page=1&limit=10&key=
     @GetMapping("/{attrType}/list/{catelogId}")

@@ -1,18 +1,20 @@
 package com.fengling.shopping.product.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import com.fengling.common.valid.AddGroup;
+import com.fengling.shopping.product.entity.AttrEntity;
+import com.fengling.shopping.product.service.AttrAttrgroupRelationService;
 import com.fengling.shopping.product.service.AttrGroupService;
+import com.fengling.shopping.product.service.AttrService;
 import com.fengling.shopping.product.service.CategoryService;
+import com.fengling.shopping.product.vo.AttrGroupRelationVo;
+import com.fengling.shopping.product.vo.AttrGroupWithAttrsVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.fengling.shopping.product.entity.AttrGroupEntity;
 import com.fengling.common.utils.PageUtils;
@@ -34,6 +36,45 @@ public class AttrGroupController {
     private AttrGroupService attrGroupService;
     @Autowired
     private CategoryService categoryService;
+    @Autowired
+    private AttrService attrService;
+    @Autowired
+    private AttrAttrgroupRelationService relationService;
+
+
+    @GetMapping("/{catelogId}/withattr")
+    public R getAttrGroupWithAttrs(@PathVariable("catelogId") Long catelogId){
+        List<AttrGroupWithAttrsVo> attrsVos = attrGroupService.getAttrGroupWithAttrsByCatelogId(catelogId);
+        return R.ok().put("data" ,attrsVos);
+    }
+
+    @PostMapping("/attr/relation")
+    public R addRelation(@RequestBody List<AttrGroupRelationVo> vos){
+        relationService.saveBatch(vos);
+        return R.ok();
+    }
+
+    @GetMapping("/{attrgroupId}/noattr/relation")
+    public R attrNoRelation(@PathVariable("attrgroupId") Long attrgroupId,
+                            @RequestParam Map<String, Object> params) {
+        PageUtils page = attrService.getNoRelationAttr(attrgroupId, params);
+        return R.ok().put("page", page);
+    }
+
+    //http://localhost:8818/api/product/attrgroup /attr/relation/delete
+    @PostMapping("/attr/relation/delete")
+    public R deleteRelation(@RequestBody AttrGroupRelationVo[] attrGroupRelationVo) {
+        attrService.deleteRelation(attrGroupRelationVo);
+        return R.ok();
+    }
+
+
+    @GetMapping("/{attrgroupId}/attr/relation")
+    public R attrRelation(@PathVariable("attrgroupId") Long attrgroupId) {
+        List<AttrEntity> attrEntityList = attrService.attrRelationAttr(attrgroupId);
+        return R.ok().put("data", attrEntityList);
+    }
+
 
     @RequestMapping("/list/{catelogId}")
     public R listByCatelogId(@RequestParam Map<String, Object> params,

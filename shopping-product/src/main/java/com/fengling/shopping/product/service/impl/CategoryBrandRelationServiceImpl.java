@@ -4,10 +4,13 @@ import com.fengling.shopping.product.dao.BrandDao;
 import com.fengling.shopping.product.dao.CategoryDao;
 import com.fengling.shopping.product.entity.BrandEntity;
 import com.fengling.shopping.product.entity.CategoryEntity;
+import com.fengling.shopping.product.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -24,9 +27,14 @@ import com.fengling.shopping.product.service.CategoryBrandRelationService;
 public class CategoryBrandRelationServiceImpl extends ServiceImpl<CategoryBrandRelationDao, CategoryBrandRelationEntity> implements CategoryBrandRelationService {
 
     @Autowired
-    BrandDao brandDao;
+    private BrandDao brandDao;
     @Autowired
-    CategoryDao categoryDao;
+    private CategoryDao categoryDao;
+//    @Autowired
+//    private BrandService brandService;
+
+    @Autowired
+    private CategoryBrandRelationDao categoryBrandRelationDao;
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
@@ -63,6 +71,23 @@ public class CategoryBrandRelationServiceImpl extends ServiceImpl<CategoryBrandR
     @Override
     public void updateCategory(Long catId, String name) {
         baseMapper.updateCategory(catId,name);
+    }
+
+
+    //出现循环依赖，用dao
+    @Override
+    public List<BrandEntity> getBrandsListById(Long catId) {
+        QueryWrapper<CategoryBrandRelationEntity> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("catelog_id",catId);
+        List<CategoryBrandRelationEntity> categoryBrandRelationEntities = categoryBrandRelationDao.selectList(queryWrapper);
+
+        List<BrandEntity> collect = categoryBrandRelationEntities.stream().map(item -> {
+            Long brandId = item.getBrandId();
+            BrandEntity byId = brandDao.selectById(brandId);
+            return byId;
+        }).collect(Collectors.toList());
+
+        return collect;
     }
 
 }

@@ -28,5 +28,10 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-
+    alicloud:
+      access-key: LTAI5tCcdWfP3gckTS4KQNrw
+      secret-key: 4vmbXUD0rOYmIuBGg07v48jzyAIXBl
+      oss:
+        endpoint: oss-cn-beijing.aliyuncs.com
+        bucket: fengling-png
 
