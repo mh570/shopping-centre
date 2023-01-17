@@ -4,16 +4,14 @@ import com.fengling.common.constant.ProductConstant;
 import com.fengling.shopping.product.dao.AttrAttrgroupRelationDao;
 import com.fengling.shopping.product.dao.AttrGroupDao;
 import com.fengling.shopping.product.dao.CategoryDao;
-import com.fengling.shopping.product.entity.AttrAttrgroupRelationEntity;
-import com.fengling.shopping.product.entity.AttrGroupEntity;
-import com.fengling.shopping.product.entity.CategoryEntity;
+import com.fengling.shopping.product.entity.*;
+import com.fengling.shopping.product.service.AttrService;
 import com.fengling.shopping.product.service.CategoryService;
 import com.fengling.shopping.product.vo.AttrGroupRelationVo;
 import com.fengling.shopping.product.vo.AttrRespVo;
 import com.fengling.shopping.product.vo.AttrVo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -29,8 +27,6 @@ import com.fengling.common.utils.PageUtils;
 import com.fengling.common.utils.Query;
 
 import com.fengling.shopping.product.dao.AttrDao;
-import com.fengling.shopping.product.entity.AttrEntity;
-import com.fengling.shopping.product.service.AttrService;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
@@ -243,7 +239,12 @@ public class AttrServiceImpl extends ServiceImpl<AttrDao, AttrEntity> implements
         return new PageUtils(attrEntityIPage);
 
 
+    }
 
+    @Override
+    public List<Long> selectSearchAttrs(List<Long> collect) {
+
+        return this.baseMapper.selectSearchAttrsById(collect);
     }
 
 

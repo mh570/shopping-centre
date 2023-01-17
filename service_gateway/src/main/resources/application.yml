@@ -4,6 +4,14 @@ spring:
       routes:
 
 
+        - id: ware_route
+          uri: lb://shopping-ware
+          predicates:
+            - Path=/api/ware/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+
         - id: member_route
           uri: lb://shopping-member
           predicates:
@@ -46,13 +54,6 @@ spring:
 
 
 
-#        - id: ware_route
-#          uri: lb://gulimall-ware
-#          predicates:
-#            - Path=/api/ware/**
-#          filters:
-#            - RewritePath=/api/(?<segment>.*),/$\{segment}
-#
 
 
 

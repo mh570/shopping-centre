@@ -19,4 +19,5 @@ public interface AttrDao extends BaseMapper<AttrEntity> {
 
     List<AttrEntity> selectByAttrId( Long attrId);
 
+    List<Long> selectSearchAttrsById(@Param("collect") List<Long> collect);
 }

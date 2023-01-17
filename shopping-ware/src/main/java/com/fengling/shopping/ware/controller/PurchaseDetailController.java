@@ -34,8 +34,9 @@ public class PurchaseDetailController {
      * 列表
      */
     @RequestMapping("/list")
-    //@RequiresPermissions("ware:purchasedetail:list")
-    public R list(@RequestParam Map<String, Object> params){
+//    http://localhost:8818/api/
+//    ware/purchasedetail/list?t=1673276820077&page=1&limit=10&key=8&wareId=
+   public R list(@RequestParam Map<String, Object> params){
         PageUtils page = purchaseDetailService.queryPage(params);
 
         return R.ok().put("page", page);

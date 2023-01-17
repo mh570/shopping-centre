@@ -94,4 +94,6 @@ public class SkuReductionTo {
     }
 
     private List<MemberPrice> memberPrice;
+
+
 }

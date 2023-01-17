@@ -17,8 +17,30 @@
         <result property="valueType" column="value_type"/>
     </resultMap>
     <select id="selectByAttrId" resultType="com.fengling.shopping.product.entity.AttrEntity">
-        SELECT attr_id,search_type,enable,show_desc,icon,catelog_id,value_select,attr_type,attr_name,value_type FROM pms_attr WHERE attr_id=#{attrId}
+        SELECT attr_id,
+               search_type,
+               enable,
+               show_desc,
+               icon,
+               catelog_id,
+               value_select,
+               attr_type,
+               attr_name,
+               value_type
+        FROM pms_attr
+        WHERE attr_id = #{attrId}
 
+    </select>
+    <!--    List<Long> selectSearchAttrsById(List<Long> collect);-->
+    <select id="selectSearchAttrsById" resultType="java.lang.Long">
+        SELECT attr_id
+        FROM pms_attr
+        WHERE attr_id
+        IN
+        <foreach collection="collect" item="id"  open="(" separator="," close=")">
+            #{id}
+        </foreach>
+          AND search_type = 1
     </select>
 
 

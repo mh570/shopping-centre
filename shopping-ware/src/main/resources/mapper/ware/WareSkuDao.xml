@@ -3,7 +3,7 @@
 
 <mapper namespace="com.fengling.shopping.ware.dao.WareSkuDao">
 
-	<!-- 可根据自己的需求，是否要使用 -->
+    <!-- 可根据自己的需求，是否要使用 -->
     <resultMap type="com.fengling.shopping.ware.entity.WareSkuEntity" id="wareSkuMap">
         <result property="id" column="id"/>
         <result property="skuId" column="sku_id"/>
@@ -12,6 +12,19 @@
         <result property="skuName" column="sku_name"/>
         <result property="stockLocked" column="stock_locked"/>
     </resultMap>
+    <!--    void updateStock(Long skuId, Long wareId, Integer skuNum);-->
+    <update id="updateStock">
+        UPDATE `wms_ware_sku`
+        SET stock = stock + #{skuNum}
+        WHERE sku_id = #{skuId}
+          AND ware_id = #{wareId}
+    </update>
+    <!--    Long getSkuStock(@Param("item") Long item);-->
+    <select id="getSkuStock" resultType="java.lang.Long">
+        SELECT SUM(stock - stock_locked)
+        FROM wms_ware_sku
+        WHERE sku_id=#{item}
+    </select>
 
 
 </mapper>

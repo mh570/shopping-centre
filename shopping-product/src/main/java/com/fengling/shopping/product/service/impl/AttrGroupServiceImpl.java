@@ -1,6 +1,5 @@
 package com.fengling.shopping.product.service.impl;
 
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.fengling.shopping.product.entity.AttrEntity;
 import com.fengling.shopping.product.service.AttrGroupService;
 import com.fengling.shopping.product.service.AttrService;
