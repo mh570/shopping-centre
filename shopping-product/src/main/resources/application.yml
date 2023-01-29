@@ -28,7 +28,19 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
+  # 本地redis设置先
+  redis:
+    host: 192.168.56.10
+    port: 6379
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
-
+  thymeleaf:
+    cache: false
+  cache:
+    type: redis
+    redis:
+      #      1小时毫秒
+      time-to-live: 360000
+      cache-null-values: true
+      use-key-prefix: false

@@ -23,6 +23,7 @@ public class SpuInfoDescServiceImpl extends ServiceImpl<SpuInfoDescDao, SpuInfoD
                 new QueryWrapper<SpuInfoDescEntity>()
         );
 
+
         return new PageUtils(page);
     }
 

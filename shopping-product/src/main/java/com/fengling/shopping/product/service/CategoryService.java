@@ -3,6 +3,7 @@ package com.fengling.shopping.product.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.fengling.common.utils.PageUtils;
 import com.fengling.shopping.product.entity.CategoryEntity;
+import com.fengling.shopping.product.vo.CateLog2Vo;
 
 import java.util.List;
 import java.util.Map;
@@ -25,6 +26,12 @@ public interface CategoryService extends IService<CategoryEntity> {
     Long[] findCategoryPath(Long catelogId);
 
     void updateCascade(CategoryEntity category);
+
+    List<CategoryEntity> getLevel1Category();
+
+
+    Map<String, List<CateLog2Vo>> getCatalogJson();
+
 
 }
 

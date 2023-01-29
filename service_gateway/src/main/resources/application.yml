@@ -48,6 +48,18 @@ spring:
           predicates:
             - Query=url,qq
 
+        - id: linux_host_route
+          uri: lb://shopping-product
+          #uri: http://localhost:10010
+          predicates:
+            - Host=fengling.com
+
+        - id: linux_search_route
+          uri: lb://shopping-elasticsearch
+          #uri: http://localhost:10010
+          predicates:
+            - Host=search.fengling.com
+
 
 
 

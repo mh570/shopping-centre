@@ -10,7 +10,11 @@ import com.fengling.shopping.product.service.BrandService;
 import org.assertj.core.util.Lists;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.redisson.api.RSemaphore;
+import org.redisson.api.RedissonClient;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.StringUtils;
 
@@ -26,12 +30,16 @@ import java.util.stream.Collectors;
 public class TestApplication {
 
     @Resource
+    private StringRedisTemplate redisDao;
+    @Resource
+    private RedissonClient redisson;
+    @Resource
     BrandService brandService;
 //    @Resource
 //    OSSClient ossClient;
 
 
-//    @Test
+    //    @Test
 //    public void demo() {
 //        // 填写Bucket名称，例如examplebucket。
 //        String bucketName = "fengling-png";
@@ -70,7 +78,34 @@ public class TestApplication {
 //            }
 //        }
 //    }
+    @Test
+    public void redissonTest() {
+        RSemaphore park = redisson.getSemaphore("park");
+        try {
+            park.acquire();
+            System.out.println("Ok");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void redissonGoTest() {
+        RSemaphore park = redisson.getSemaphore("park");
+            park.release();
+        System.out.println("GO");
+    }
 
+
+
+
+    @Test
+    public void redisTest() {
+        ValueOperations<String, String> op = redisDao.opsForValue();
+        op.set("1010", "测试");
+
+        String s = op.get("1010");
+        System.out.println(s);
+    }
 
     @Test
     public void hasTest() {
