@@ -1,0 +1,175 @@
+docker 因为主机文件关联docker文件，原因不明，无法exec/start操作          错误：Error response from daemon: Container 59b74986054b1a18db894aa1d8207c4b84e4746c8f7951079aab21b85e84b32b is not running
+
+idea 原因不明，maven奇怪全部爆红，疑似idea的bug
+idea 经典bug包找不到
+依赖版本问题，SpringCloud OpenFeign报错  #####包中移除ribbion依赖，并加入loadbalancer依赖"#######
+
+nacos.config的配置是spring.cloud.nacos.config.server-addr不是spring.cloud.nacos.discovery.server-addr
+nacos新版本，还是依赖问题，没有bootstrap的依赖没有
+nacos name不生效的：先加依赖，还要去掉“bootstrapProperties”前缀,注意、、、、一定重启nacos原因不明
+依赖没事不要动
+前端注意在tm注意<scrip><script>区别，也是注意打错字，cao
+前端还有大小写Vue、vue，注意大小写，注意大小写，注意大小写，注意大小写，注意大小写，注意大小写，注意大小写，注意大小写
+
+测试test，bug包导错
+前端vue  改版本，配置文件设置sass-loader  npm install sass-loader@6.0.6 node-sass@4.0.0  --save-dev     While resolving: sass-loader@6.0.6   npm ERR! Found: node-sass@6.0.1   npm ERR! node_modules/node-sass  npm ERR!   node-sass@"^6.0.1" from the root project
+
+
+
+
+
+解决办法npm install --ignore-scripts
+npm ERR! code 1
+npm ERR! path E:\Item\Front\renren-fast-vue-master\node_modules\chromedriver
+npm ERR! command failed
+npm ERR! command C:\WINDOWS\system32\cmd.exe /d /s /c node install.js
+npm ERR! Downloading https://chromedriver.storage.googleapis.com/2.27/chromedriver_win32.zip
+npm ERR! Saving to C:\Users\mh570\AppData\Local\Temp\chromedriver\chromedriver_win32.zip
+npm ERR! node:events:491
+npm ERR!       throw er; // Unhandled 'error' event
+npm ERR!       ^
+npm ERR!
+npm ERR! Error: read ECONNRESET
+npm ERR!     at TLSWrap.onStreamRead (node:internal/stream_base_commons:217:20)
+npm ERR! Emitted 'error' event on ClientRequest instance at:
+npm ERR!     at TLSSocket.socketErrorListener (node:_http_client:494:9)
+npm ERR!     at TLSSocket.emit (node:events:513:28)
+npm ERR!     at emitErrorNT (node:internal/streams/destroy:157:8)
+npm ERR!     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
+npm ERR!     at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+npm ERR!   errno: -4077,
+npm ERR!   code: 'ECONNRESET',
+npm ERR!   syscall: 'read'
+npm ERR! }
+###############################################################################################################################
+Error: Node Sass does not yet support your current environment: Windows 64-bit with Unsupported runtime (93)
+For more information on which environments are supported please see:
+
+
+npm install node-sass@4.7.2
+没事不tm乱改前端依赖
+依赖问题优先百度
+
+gateway的lb问题出现在<!--         &lt;!&ndash;不使用Ribbon 进行客户端负载均衡      配置中心来做配置管理&ndash;&gt;-->
+               <!--            <exclusions>-->
+               <!--                <exclusion>-->
+               <!--                    <groupId>org.springframework.cloud</groupId>-->
+               <!--                    <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>-->
+               <!--                </exclusion>-->
+               <!--            </exclusions>-->
+
+取消了载均衡 用了spring-cloud-starter-loadbalancer依赖找不到nacos的lb
+
+还有tm的没事不要改依赖
+经典跨域No 'Access-Control-Allow-Origin'
+
+注意实体类javax.validation.constraints的注解@NotEmpty的使用
+*****没有解决，前端: elementui tree树形控件    default-expanded-keys失效及动态绑定问题原因不知道，没有解决
+注意tm的看清楚数据库数据和vo数据,vo和实体数据不等
+注意tm的看清楚前端对应的json，不要没事写个data的就完事了
+
+没有端口原因是web包依赖没有
+
+前端--legacy-peer-deps   NPM 忽略项目中引入的各个modules之间的相同modules但不同版本的问题并继续安装
+1. 使用: npm rebuild node-sass
+2. 然后再npm run dev 就没问题了
+
+Error: Method queryTotal execution error of sql
+字段和数据库对应不上
+p100,package com.fengling.shopping.product.service.impl.ProductAttrValueServiceImpl  public List<ProductAttrValueEntity> baseAttrList(Long spuId) 40:1
+有业务逻辑bug。懒得动...........
+
+
+Error response from daemon: oci runtime error: container_linux.go:290: starting container process caused "container init exited prematurely".
+linux与docker版本的兼容性问题
+Error: No such image
+
+
+
+设置权限
+docker启动退出问题，解决方法1.chmod -R 777 /路径
+maven 注意 verxion和version的区别
+"status": 400,     "error": "Bad Request"
+http,tm不要设置参数，直接默认[]就可以
+
+elasticSearch的json没有  注释这玩意好像 # 所以没法识别
+idea关于页面问题是idea没有自动保存，得一会重新启动服务
+web前端bug，addr和attr...........注意看清楚什么是什么
+
+
+json记得返回@ResponseBoy
+System.out.println(JSON.toJSONString(map));有长度限制
+
+
+Sorry Redis Desktop Manager Crashed的解决办法
+因为conf设置了保护模式：不允许外部网络连接redis服务，应该成protected-mode no
+
+
+在idea中单独使用@Mapper注解，在@Autowired时，idea会提示找不到bean，但是不影响运行，如果想消除爆红，可以将@Mapper注解跟@Repository注解一起用，这样便可消除爆红
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

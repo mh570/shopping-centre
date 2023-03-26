@@ -37,19 +37,31 @@ class ServiceElasticsearchApplicationTests {
         searchRequest.indices("xxx");
         //3.指定DSL 检索条件
         //SearchSourceBuilder sourceBuilder(里面封装的查询条件)
+
+
+
         SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
         //3.1构建检索条件
 //        searchSourceBuilder.query();
 //        searchSourceBuilder.from();
 //        searchSourceBuilder.size();
 //        searchSourceBuilder.aggregation();
-        searchSourceBuilder.query(QueryBuilders.matchQuery("field", "xxx"));
+
+        searchSourceBuilder.query(QueryBuilders.matchQuery("field", "什么东西"));
         //创建聚合条件
         //1.查看值分布聚合
         TermsAggregationBuilder agg1 = AggregationBuilders.terms("Aggname").field("AggField").size(10);
         //将聚合条件加入到查询条件中
         searchSourceBuilder.aggregation(agg1);
         searchRequest.source(searchSourceBuilder);
+
+
+
+
+
+
+
+
         //4.执行检索 拿到数据
         SearchResponse searchResponse = client.search(searchRequest, ElasticSearchConfig.COMMON_OPTIONS);
         //5.分析结果（Json串）

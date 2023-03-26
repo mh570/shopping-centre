@@ -44,6 +44,7 @@ public class ProductSaveServiceImpl implements ProductSaveService {
 
         //4.执行什么检索 拿到数据
         BulkResponse bulk = client.bulk(bulkRequest, ElasticSearchConfig.COMMON_OPTIONS);
+
         System.out.println(JSON.toJSONString(bulk)+"拿到ddddd数据");
         boolean b = bulk.hasFailures();
         System.out.println(b+"boolean");

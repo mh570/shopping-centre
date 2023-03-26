@@ -33,7 +33,7 @@ build/
 .vscode/
 
 ### txt草稿 ###
-*.txt
+#*.txt
 
 ### mvnw ###
 **/mvnw.cmd

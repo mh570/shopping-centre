@@ -1,0 +1,636 @@
+
+
+Failed to read artifact descriptor for com.oracle:ojdbc6:jar:11.2.0.3
+Failed to read artifact descriptor for com.microsoft.sqlserver:sqljdbc4:jar:4.0
+
+
+
+
+Error response from daemon: Cannot kill container mysql: Container 27aef88f0d374e0f244c96b44f2e801a01b54656b526755fe974954f40bdfc60 is not running
+
+npm WARN deprecated har-validator@5.1.5: this library is no longer supported
+
+
+RESOLVE could not resolve
+While resolving: sass-loader@6.0.6
+npm ERR! Found: node-sass@6.0.1
+npm ERR! node_modules/node-sass
+npm ERR!   node-sass@"^6.0.1" from the root project
+npm ERR!
+npm ERR! Could not resolve dependency:
+npm ERR! peer node-sass@"^4.0.0" from sass-loader@6.0.6
+npm ERR! node_modules/sass-loader
+npm ERR!   sass-loader@"6.0.6" from the root project
+npm ERR!
+npm ERR! Conflicting peer dependency: node-sass@4.14.1
+npm ERR! node_modules/node-sass
+npm ERR!   peer node-sass@"^4.0.0" from sass-loader@6.0.6
+npm ERR!   node_modules/sass-loader
+npm ERR!     sass-loader@"6.0.6" from the root project
+npm ERR!
+npm ERR! Fix the upstream dependency conflict, or retry
+npm ERR! this command with --force, or --legacy-peer-deps
+npm ERR! to accept an incorrect (and potentially broken) dependency resolution.
+npm ERR!
+npm ERR! See C:\Users\mh570\AppData\Local\npm-cache\eresolve-report.txt for a full report.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\mh570\AppData\Local\npm-cache\_logs\2022-12-14T22_50_22_501Z-debug-0.log
+
+
+
+
+[{
+	"resource": "/c:/Users/mh570/Desktop/test/test/src/components/hi.vue",
+	"owner": "_generated_diagnostic_collection_name_#0",
+	"code": "2339",
+	"severity": 8,
+	"message": "类型“Vue3Instance<{}, Readonly<ExtractPropTypes<{}>>, Readonly<ExtractPropTypes<{}>>, {}, {}, true, ComponentOptionsBase<any, any, any, any, ... 5 more ..., any>> & ... 4 more ... & Readonly<...>”上不存在属性“name”。",
+	"source": "ts",
+	"startLineNumber": 3,
+	"startColumn": 15,
+	"endLineNumber": 3,
+	"endColumn": 19
+}]
+
+
+
+
+npm WARN deprecated
+
+Unknown command: "insatll"
+
+Did you mean this?
+    npm install # Install a package
+
+To see a list of supported npm commands, run:
+  npm help
+
+
+
+
+
+
+
+
+node_modules/node-sass
+npm ERR!   node-sass@"^8.0.0" from the root project
+npm ERR!
+npm ERR! Could not resolve dependency:
+npm ERR! peer node-sass@"^4.0.0" from sass-loader@6.0.6
+npm ERR! node_modules/sass-loader
+npm ERR!   sass-loader@"6.0.6" from the root project
+npm ERR!
+npm ERR! Conflicting peer dependency: node-sass@4.14.1
+
+
+Conflicting peer dependency: webpack@5.75.0
+ deprecated tar@2.2.2: This version of tar is no longer supported, and will not receive security updates. Please upgrade asap.
+
+
+
+
+passwd: all authentication tokens updated successfully.
+
+E502: "redis.conf/" is a directory
+Press ENTER or type command to continue
+BAD PASSWORD: The password is shorter than 8 characters
+ Exited (0) 7 hours ago
+Loaded plugins: fastestmirror
+You need to be root to perform this command.
+
+/usr/bin/docker-current: manifest for docker.io/mysql:6.0.8 not found.
+See '/usr/bin/docker-current run --help'.
+
+  Exited (1) About a minute ago
+
+Ignoring query to other database
+
+
+
+ @closeMain
+
+
+
+
+
+Plugin caching_sha2_password could not be loaded:白x白白令台白白令g頫
+ Plugin 'password' is not loaded
+
+Error response from daemon: Get https://registry.cn-hangzhou.aliyuncs.com/v2/: unauthorized: authentication required
+shell scirpt
+
+Error response from daemon: conflict: unable to delete feb5d9fea6a5 (must be forced) - image is being used by stopped container a074c4ec7773
+
+Error response from daemon: No such image: d20666a6f154:latest
+
+[38700] 08 Dec 02:55:33.602 # HandleServiceCommands: system error caught. error code=1056, message = StartService failed: unknown error
+
+Unit iptables.service could not be found.
+   Loaded: loaded (/usr/lib/systemd/system/firewalld.service; disabled; vendor preset: enabled)
+command not found
+C:\Windows\System32\drivers\etc
+
+java: java.lang.IllegalAccessError: class lombok.javac.apt.LombokProcessor (in unnamed module @0x6f634e6) cannot access class com.sun.tools.javac.processing.JavacProcessingEnvironment (in module jdk.compiler) because module jdk.compiler does not export com.sun.tools.javac.processing to unnamed module @0x6f634e6
+
+Reference Queue
+
+itbaizhan-shop-backend
+
+
+
+
+@TODO  英语废物
+Switch  produces
+
+byte,short,int,long,float,double,char,boolean
+
+Integer
+
+public private protected default
+
+lib
+
+final   finally finalize
+    socket
+
+Object
+    clone   toString    notify  notifyAll   wait    equals  hashCode    getClass    finalize
+
+String
+    length  indexOf isEmpty toLowerCase toUpperCase
+    字符串反转 reverse
+
+abstract    interface
+
+IO
+inputStream、outputStream reader、writer
+
+Files
+    exist,createFile,createDirectory,write,read,copy,size.delete,move
+
+class、constructor、field、method
+                    字段
+实现 Cloneable 接口，    实现 Serializable 接口
+
+@RestControllerAdvice    @ExceptionHandler      RuntimeException                                     REST 即表述性状态传递    英文：Representational State Transfer   人话:传输数据的  @ResponseBody
+error   exception
+        NullPointerException：空指针异常；
+        SQLException：数据库相关的异常；
+        IndexOutOfBoundsException：数组下角标越界异常；
+        FileNotFoundException：打开文件失败时抛出；
+        IOException：当发生某种IO异常时抛出；
+        ClassCastException：当试图将对象强制转换为不是实例的子类时，抛出此异常；
+        NoSuchMethodException：无法找到某一方法时，抛出；
+        ArrayStoreException：试图将错误类型的对象存储到一个对象数组时抛出的异常；
+        NumberFormatException：当试图将字符串转换成数字时，失败了，抛出；
+        IllegalArgumentException 抛出的异常表明向方法传递了一个不合法或不正确的参数。
+        ArithmeticException当出现异常的运算条件时，抛出此异常。例如，一个整数“除以零”时，抛出此类的一个实例。
+
+overload    override
+
+JMM                     到JVM/线程
+happens-before 规则
+    synchronized    volatile
+
+集合--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+（1）Collection
+① set
+HashSet、TreeSet
+HashSet下面 linkedHashSet
+② list
+ArrayList、LinkedList、Vector
+Vector下面 STACK
+3 queue
+
+（2）Map
+HashMap、HashTable、TreeMap
+HashMap下面 LinkedHashMap
+
+TreeSet
+        Comparable 接口   CompareTo() 方法
+TreeMap
+    Comparator 接口   compare() 方法
+Iterator 迭代器
+
+Collections.unmodifiableSet         和final关系
+Collections.synchronizedMap()       还有个线程安全的
+
+BaseMapper
+
+ConcurrentHashMap  到快乐线程
+Segment     数组
+HashEntry   数组
+Node        节点
+
+线程和锁--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+继承 Thread 类；
+    定义一个Thread类的子类，重写run方法，将相关逻辑实现，run()方法就是线程要执行的业务逻辑方法
+    创建自定义的线程子类对象
+    调用子类实例的star()方法来启动线程
+实现 Runnable 接口；
+    定义Runnable接口实现类MyRunnable，并重写run()方法
+    创建MyRunnable实例myRunnable，以myRunnable作为target创建Thead对象，该Thread对象才是真正的线程对象
+    调用线程对象的start()方法
+实现 Callable 接口；
+    创建实现Callable接口的类myCallable                                new FutureTask
+    以myCallable为参数创建FutureTask对象
+    将FutureTask作为参数创建Thread对象
+    调用线程对象的start()方法
+使用 Executors 工具类创建线程池
+
+ThreadPoolExecutor那几个参数
+
+使用 interrupt 方法中断线程。
+
+
+ReentrantLock 类加锁的线程的 Condition 类的 await() / signal() / signalAll()
+     tryLock lock
+        类部类Sync 继承 AbstractQueuedSynchronizer AQS
+        Exclusive（独占）   Share（共享）
+
+Synchronized
+
+ReadWriteLock   StampedLock
+run()   start()
+
+yield
+Volatile
+    store、write 等原子操作修改主内
+CAS其实就是 Compare And Swap 的一个缩写
+atomicreference 类来保证引用对象之间的原子性，你可以把多个变量放在一个对象里来进行CAS操作。
+
+Semaphore同步器
+CountDownLatch同步器
+CyclicBarrier同步器
+交换器(Exchanger)同步器
+Phaser同步器
+
+Runnable
+
+
+
+ThreadLocal 线程变量
+
+如果你提交任务时，线程池队列已满，这时会发生什么
+这里区分一下：
+（1）如果使用的是无界队列 LinkedBlockingQueue，也就是无界队列的话，没关系，继续添加任务到阻塞队列中等待执行，因为 LinkedBlockingQueue 可以近乎认为是一个无穷大的队列，可以无限存放任务
+（2）如果使用的是有界队列比如 ArrayBlockingQueue，任务首先会被添加到ArrayBlockingQueue 中，ArrayBlockingQueue 满了，会根据maximumPoolSize 的值增加线程数量，如果增加了线程数量还是处理不过来，ArrayBlockingQueue 继续满，那么则会使用拒绝策略RejectedExecutionHandler 处理满了的任务，默认是 AbortPolicy
+
+
+操作系统层面上，任何线程一般都具有五种状态
+(1) 新建状态（NEW）
+(2) 就绪状态（READ）
+(3) 运行状态（RUNNING）
+(4) 阻塞状态（ BLOCKED）
+(5) 死亡状态（TERMINATED）
+
+
+Java线程状态
+1. New 新建状态（线程刚被创建，start方法之前的状态）
+2. Runnable 运行状态（得到时间片运行中状态）（Ready就绪，未得到时间片就绪状态）
+3. Blocked 阻塞状态（如果遇到锁，线程就会变为阻塞状态等待另一个线程释放锁）
+4. Waiting 等待状态（无限期等待）
+5. Time_Waiting 超时等待状态（有明确结束时间的等待状态）
+6. Terminated 终止状态（当线程结束完成之后就会变成此状态）
+
+as-if-serial规则
+happens-before规则
+
+ThreadPoolExecutor构造函数
+
+newSingleThreadExecutor：单线程池。
+newCachedThreadPool：缓冲功能的线程
+newFixedThreadPool：固定线程数量的线程池。
+newScheduledThreadPool：创建一个大小无限的线程池。
+
+
+AbortPolicy - 丢弃任务，并抛出拒绝执行 RejectedExecutionException 异常信息。线程池默认的拒绝策略。必须处理好抛出的异常，否则会打断当前的执行流程，影响后续的任务执行。
+DiscardPolicy - 直接丢弃，其他啥都没有
+DiscardOldestPolicy - 当触发拒绝策略，只要线程池没有关闭的话，丢弃阻塞队列 workQueue 中最老的一个任务，并将新任务加入
+CallerRunsPolicy(调用者运行策略)
+                   触发拒绝策略时，只要线程池没有关闭，就由提交任务的当前线程处理。
+                   一般并发比较小，性能要求不高，不允许失败。
+                   但是，由于调用者自己运行任务，如果任务提交速度过快，可能导致程序阻塞，性能效率上必然的损失较大
+
+
+
+
+
+
+《阿里巴巴Java开发手册》中强制线程池不允许使用 Executors 去创建，而是通过 ThreadPoolExecutor 的方式，这样的处理方式让写的同学更加明确线程池的运行规则，规避资源耗尽的风险
+Executors 各个方法的弊端：
+newFixedThreadPool 和 newSingleThreadExecutor:
+主要问题是堆积的请求处理队列可能会耗费非常大的内存，甚至 OOM。
+newCachedThreadPool 和 newScheduledThreadPool:
+主要问题是线程数最大数是 Integer.MAX_VALUE，可能会创建数量非常多的线程，甚至 OOM。
+ThreadPoolExecutor 创建线程池方式只有一种，就是走它的构造函数，参数自己指定
+
+
+
+
+
+
+
+JVM--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Serial收集器（复制算法): 新生代单线程收集器，标记和清理都是单线程，优点是简单高效；
+ParNew收集器 (复制算法): 新生代收并行集器，实际上是Serial收集器的多线程版本，在多核CPU环境下有着比Serial更好的表现；
+Parallel Scavenge收集器 (复制算法): 新生代并行收集器，追求高吞吐量，高效利用 CPU。吞吐量 = 用户线程时间/(用户线程时间+GC线程时间)，高吞吐量可以高效率的利用CPU时间，尽快完成程序的运算任务，适合后台应用等对交互相应要求不高的场景；
+Serial Old收集器 (标记-整理算法): 老年代单线程收集器，Serial收集器的老年代版本；
+Parallel Old收集器 (标记-整理算法)： 老年代并行收集器，吞吐量优先，Parallel Scavenge收集器的老年代版本；
+CMS(Concurrent Mark Sweep)收集器（标记-清除算法）： 老年代并行收集器，以获取最短回收停顿时间为目标的收集器，具有高并发、低停顿的特点，追求最短GC回收停顿时间。
+G1(Garbage First)收集器 (标记-整理算法)： Java堆并行收集器，G1收集器是JDK1.7提供的一个新收集器，G1收集器基于“标记-整理”算法实现，也就是说不会产生内存碎片。此外，G1收集器不同于之前的收集器的一个重要特点是：G1回收的范围是整个Java堆(包括新生代，老年代)，而前六种收集器回收的范围仅限于新生代或老年代。
+
+
+新生代回收器：Serial、ParNew、Parallel Scavenge
+老年代回收器：Serial Old、Parallel Old、CMS
+整堆回收器：G1
+
+启动类加载器(Bootstrap ClassLoader)
+扩展类加载器(extensions class loader)
+系统类加载器（system class loader）
+
+
+
+
+Major GC/Full GC
+
+
+网络--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+pageContext，页面上下文对象，相当于页面中所有功能的集合，通过它可以获取JSP页面的out、request、response、session、application对象。
+request
+response
+session
+application，应用程序对象，application实现了用户间数据的共享，可存放全局变量，它开始于服务器启动，知道服务器关闭。
+page，就是JSP本身。
+exception
+out，out用于在web浏览器内输出信息，并且管理应用服务器上的输出缓冲区，作用域page。
+config，取得服务器的配置信息。
+
+
+ 4 种作用域
+application、session、request、page
+forward 是直接请求转发  redirect 是间接请求转发，又叫重定向
+session 和 cookie token
+
+
+
+
+spring--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Spring有七大功能模块
+Core    AOP orm Dao Web Context MVC
+spring
+
+@Transactional
+@Autowired
+@ComponentScan
+@SpringBootApplication
+
+singleton   prototype   request session global-session
+
+
+
+
+
+xml 接口
+BeanDefinitionReader解析配置文件
+                                    创建 BeanFactory ApplicationContext
+BeanDefinition
+BeanFactoryPostProcessor
+反射，实例化
+                               creatingSet("对象名字")
+                               普通对象————————>singletonFactories<对象名字,lambda>
+填充属性————————————————————————>1.@Autowired ————>没有bean就创建
+                               2.填充———>singletonObjects没有——————>creatingSet有，循环依赖——————>earlySingletonObjects没有——————>singletonFactories———>lambda——>是否要AOP——>earlySingletonObjects
+Aware接口属性
+BeanPostProcessor#bafore
+initializingBean#AftPropertiesSet
+init-method方法 是否实现
+BeanPostProcessor#after——————————————————————————>AOP————————>动态代理————————>JDK/CGLIB————————>earlyProxyReferences
+BeanFactory单例池——————————————>singletonObjects
+完整bean对象
+
+注册 Destruction 相关接口
+使用
+Destruction 销毁
+DisposableBean 是否实现
+destroy-method 是否定义方法
+
+
+3级缓存
+1.singletonObjects
+2.earlySingletonObjects<对象名字,代理对象>
+3.singletonFactories<对象名字,lambda>
+
+4.earlyProxyReferences
+
+
+
+
+REQUIRED：默认值，支持当前事务，如果没有事务会创建一个新的事务
+SUPPORTS：支持当前事务，如果没有事务的话以非事务方式执行
+MANDATORY：支持当前事务，如果没有事务抛出异常
+REQUIRES_NEW：创建一个新的事务并挂起当前事务
+NOT_SUPPORTED：以非事务方式执行，如果当前存在事务则将当前事务挂起
+NEVER：以非事务方式进行，如果存在事务则抛出异常
+NESTED：如果当前存在事务，则在嵌套事务内执行。如果当前没有事务，则进行与REQUIRED类似的操作
+
+隔离级别
+isolation_default   使用数据库默认的事务隔离级别
+isolation_read_uncommitted  允许读取尚未提交的修改，可能导致脏读、幻读和不可重复读
+isolation_read_committed    允许从已经提交的事务读取，可防止脏读、但幻读，不可重复读仍然有可能发生
+isolation_repeatable_read   对相同字段的多次读取的结果是一致的，除非数据被当前事务自生修改。可防止脏读和不可重复读，但幻读仍有可能发生
+isolation_serializable  完全服从acid隔离原则，确保不发生脏读、不可重复读、和幻读，但执行效率最低。
+
+
+springMVC--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+模型（model）-视图（view）-控制器（controller）
+
+（1）前端控制器 DispatcherServlet（不需要程序员开发）
+（2）处理器映射器 HandlerMapping（不需要程序员开发）
+（3）处理器适配器 HandlerAdapter
+（4）处理器 Handler（需要程序员开发）
+（5）视图解析器 ViewResolver（不需要程序员开发）
+（6）视图 View（需要程序员开发jsp）
+
+
+（1）用户发送请求至前端控制器DispatcherServlet；
+（2） DispatcherServlet收到请求后，调用HandlerMapping处理器映射器，请求获取Handle；
+（3）处理器映射器根据请求url找到具体的处理器，生成处理器对象及处理器拦截器(如果有则生成)一并返回给DispatcherServlet；
+（4）DispatcherServlet 调用 HandlerAdapter处理器适配器；
+（5）HandlerAdapter 经过适配调用 具体处理器(Handler，也叫后端控制器)；
+（6）Handler执行完成返回ModelAndView；
+（7）HandlerAdapter将Handler执行结果ModelAndView返回给DispatcherServlet；
+（8）DispatcherServlet将ModelAndView传给ViewResolver视图解析器进行解析；
+（9）ViewResolver解析后返回具体View；
+（10）DispatcherServlet对View进行渲染视图（即将模型数据填充至视图中）
+（11）DispatcherServlet响应用户。
+
+
+HandlerInterceptor
+
+
+
+
+
+
+
+
+
+
+mysql--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                           持久
+binlog (主从同步 ) redo log (重做日志) undo log(回滚日志)
+EXPLAIN 执行计划
+
+InnoDB  MyISAM
+
+
+3个记录隐藏字段
+undo 日志
+Read View
+
+Record lock：单个行记录上的锁
+Gap lock：间隙锁，锁定一个范围，不包括记录本身
+Next-key lock：record+gap 锁定一个范围，包含记录本身
+Next-locking keying为了解决Phantom Problem幻读问题
+
+
+redis--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+RabbitMQ--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//Kafka
+
+RocketMQ这忽略考虑
+
+项目--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+JSR303
+
+
+
+
+面试话语稿
+
+jvm级别
+    JDK 和 JRE 有什么区别？
+        JDK Java开发工具包
+        JRE Java运行环境
+        JDK中包含JRE，JDK中有一个名为jre的目录，里面包含两个文件夹bin和lib，bin就是JVM，lib就是类库。
+        说明jvm
+            Java程序运行机制
+            jvm的运行时数据区1.8
+            双亲委派模型/ 5 个步骤
+            GC
+                垃圾收集器
+                引用类型
+                年轻和老年
+                2个回收机制算法
+                3个垃圾回收算法
+                jvm垃圾回收器
+
+hashmap级别
+    == 和 equals 的区别是什么？
+    equals 和 HashCode
+    举例子 HashMap 的 put 过程----------------------------------------->布隆过滤器的原理
+        hashMap的数据结构
+        源码说明
+        线程安全的
+            Collections.synchronizedMap()       还有个线程安全的
+            HashTable和ConcurrentHashMap
+                快乐线程和锁
+                    锁3个原则
+                    内存模型
+                    synchronized{升级}
+                    redisson
+
+
+
+
+
+
+
+
+
+
+
+
+
+v-model
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+草搞
+sync
+
+Haku_Suehisa
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+interrupt
+
+
+
