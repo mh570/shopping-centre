@@ -30,6 +30,11 @@ public class SkuInfoController {
     @Autowired
     private SkuInfoService skuInfoService;
 
+    @RequestMapping("/asd")
+
+    public String asds(){
+        return "asd";
+    }
     /**
      * 列表
      */

@@ -12,6 +12,8 @@ import com.fengling.shopping.product.vo.AttrRespVo;
 import com.fengling.shopping.product.vo.AttrVo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -126,12 +128,13 @@ public class AttrServiceImpl extends ServiceImpl<AttrDao, AttrEntity> implements
         return pageUtils;
     }
 
+    @Cacheable(value = "attr", key = "'attrinfo:' + #root.args[0]")
     @Override
     public AttrRespVo getAttrInfo(Long attrId) {
         AttrEntity attrEntity = this.baseMapper.selectById(attrId);
+//        System.out.println("ssssssssssssss" + attrEntity.toString());
         AttrRespVo attrRespVo = new AttrRespVo();
         BeanUtils.copyProperties(attrEntity, attrRespVo);
-
         if (attrEntity.getAttrType() == ProductConstant.AttrEnum.ATTR_TYPE_BASE.getCode()) {
             AttrAttrgroupRelationEntity relationEntity = attrAttrgroupRelationDao.selectOne(new QueryWrapper<AttrAttrgroupRelationEntity>().eq("attr_id", attrId));
             if (relationEntity != null && relationEntity.getAttrGroupId() != null) {
@@ -145,6 +148,7 @@ public class AttrServiceImpl extends ServiceImpl<AttrDao, AttrEntity> implements
         Long catelogId = attrEntity.getCatelogId();
         Long[] categoryPath = categoryService.findCategoryPath(catelogId);
         attrRespVo.setCatelogPath(categoryPath);
+
         CategoryEntity categoryEntity = categoryDao.selectById(catelogId);
         if (categoryEntity != null && categoryEntity.getName() != null) {
             attrRespVo.setCatelogName(categoryEntity.getName());

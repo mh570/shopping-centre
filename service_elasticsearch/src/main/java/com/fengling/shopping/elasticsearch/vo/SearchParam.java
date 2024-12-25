@@ -12,8 +12,13 @@ public class SearchParam {
     private List<Long> brandId;
     private List<String> attrs;
     private Integer pageNum;
+    private String _queryString;
 
-    public SearchParam(String keyword, Long catalog3Id, String sort, Integer hasStock, String skuPrice, List<Long> brandId, List<String> attrs, Integer pageNum) {
+
+    public SearchParam() {
+    }
+
+    public SearchParam(String keyword, Long catalog3Id, String sort, Integer hasStock, String skuPrice, List<Long> brandId, List<String> attrs, Integer pageNum, String _queryString) {
         this.keyword = keyword;
         this.catalog3Id = catalog3Id;
         this.sort = sort;
@@ -22,9 +27,15 @@ public class SearchParam {
         this.brandId = brandId;
         this.attrs = attrs;
         this.pageNum = pageNum;
+        this._queryString = _queryString;
     }
 
-    public SearchParam() {
+    public String get_queryString() {
+        return _queryString;
+    }
+
+    public void set_queryString(String _queryString) {
+        this._queryString = _queryString;
     }
 
     public String getKeyword() {

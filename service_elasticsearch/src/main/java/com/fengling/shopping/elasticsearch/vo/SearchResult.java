@@ -2,18 +2,55 @@ package com.fengling.shopping.elasticsearch.vo;
 
 import com.fengling.common.to.es.SkuEsModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SearchResult {
     private List<SkuEsModel> products;
     private Long total;
     private Integer totalPages;
-
+    private Integer pageNum;
     private List<BrandVo> brandVos;
     private List<AttrVo> attrVos;
     private List<CatalogVo> catalogVos;
+    private List<Integer> pageNavs;
+
+    private List<NavVo> navs = new ArrayList<>();
+    private List<Long> attrIds = new ArrayList<>();
+
+    public SearchResult(List<SkuEsModel> products, Long total, Integer totalPages, Integer pageNum, List<BrandVo> brandVos, List<AttrVo> attrVos, List<CatalogVo> catalogVos, List<Integer> pageNavs, List<NavVo> navs) {
+        this.products = products;
+        this.total = total;
+        this.totalPages = totalPages;
+        this.pageNum = pageNum;
+        this.brandVos = brandVos;
+        this.attrVos = attrVos;
+        this.catalogVos = catalogVos;
+        this.pageNavs = pageNavs;
+        this.navs = navs;
+    }
+
+    public List<NavVo> getNavs() {
+        return navs;
+    }
+
+    public void setNavs(List<NavVo> navs) {
+        this.navs = navs;
+    }
 
     public SearchResult() {
+    }
+
+    public List<Integer> getPageNavs() {
+        return pageNavs;
+    }
+
+    public void setPageNavs(List<Integer> pageNavs) {
+        this.pageNavs = pageNavs;
+    }
+
+    public Integer getPageNum() {
+        return pageNum;
     }
 
     public List<CatalogVo> getCatalogVos() {
@@ -58,6 +95,58 @@ public class SearchResult {
 
     public List<BrandVo> getBrandVos() {
         return brandVos;
+    }
+
+    public void setPageNum(Integer pageNum) {
+        this.pageNum = pageNum;
+    }
+
+    public List<Long> getAttrIds() {
+        return attrIds;
+    }
+
+    public void setAttrIds(List<Long> attrIds) {
+        this.attrIds = attrIds;
+    }
+
+
+    public static class NavVo {
+        private String navName;
+        private String navValue;
+        private String link;
+
+        public NavVo() {
+        }
+
+        public NavVo(String navName, String navValue, String link) {
+            this.navName = navName;
+            this.navValue = navValue;
+            this.link = link;
+        }
+
+        public String getNavName() {
+            return navName;
+        }
+
+        public void setNavName(String navName) {
+            this.navName = navName;
+        }
+
+        public String getNavValue() {
+            return navValue;
+        }
+
+        public void setNavValue(String navValue) {
+            this.navValue = navValue;
+        }
+
+        public String getLink() {
+            return link;
+        }
+
+        public void setLink(String link) {
+            this.link = link;
+        }
     }
 
     public void setBrandVos(List<BrandVo> brandVos) {
